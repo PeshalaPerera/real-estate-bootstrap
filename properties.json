@@ -118,7 +118,12 @@
         "title": "FAE Business School - Faculdade de Administração e Economia",
         "location": "6498 Prentice Center",
         "picture": "properties/prop1.jpg",
-        "url": ""
+        "url": "",
+        "added": {
+            "month": "October",
+            "day": 12,
+            "year": 2022
+        }
     },
     {
         "id": 7,
@@ -155,7 +160,12 @@
         "title": "Solusi University",
         "location": "5 Warrior Drive",
         "picture": "properties/prop1.jpg",
-        "url": ""
+        "url": "",
+        "added": {
+            "month": "October",
+            "day": 12,
+            "year": 2022
+        }
     },
     {
         "id": 9,
