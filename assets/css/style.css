@@ -508,6 +508,10 @@ a:hover {
   margin-left: 0px;
 }
 
+.add-favourites {
+  background-color: #0077b6;
+}
+
 /*------/ Socials /------*/
 .socials-a {
   text-decoration: none;
