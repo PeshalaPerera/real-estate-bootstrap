@@ -145,6 +145,11 @@ fetch("properties.json")
                   <h4 class="card-info-title">Garages</h4>
                   <span>1</span>
                 </li>
+                <li>
+                  <a href="#" class="link-one">
+                    <i class="bi bi-heart fs-1" aria-hidden="true"></i>
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
@@ -224,9 +229,9 @@ fetch("properties.json")
 
     // document.querySelector("#latest-properties-output").innerHTML = latest_properties_output;
     // document.querySelector("#gallery-output").innerHTML = gallery_output;
-    // document.querySelector("#our-properties-output").innerHTML = our_properties_output;
+    document.querySelector("#our-properties-output").innerHTML = our_properties_output;
     // document.querySelector("#our-gallery").innerHTML = our_gallery;
-    document.querySelector("#your-favourites").innerHTML = your_favourites;
+    // document.querySelector("#your-favourites").innerHTML = your_favourites;
   })
   .catch(function (err) {
     console.log(err);
