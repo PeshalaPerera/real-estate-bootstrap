@@ -1,12 +1,13 @@
 fetch("properties.json")
-.then(function(response){
+  .then(function (response) {
     return response.json();
-})
-.then(function (properties) { 
-    let placeholder = document.querySelector("#data-output");
-    let out = "";
+  })
+  .then(function (properties) {
+    let latest_properties_output = "";
+    let gallery_output = "";
+
     for (let property of properties) {
-        out += `<div class="carousel-item-b swiper-slide">
+      latest_properties_output += `<div class="carousel-item-b swiper-slide">
         <div class="card-box-a card-shadow">
           <div class="img-box-a">
             <img
@@ -61,10 +62,41 @@ fetch("properties.json")
           </div>
         </div>
       </div>`;
+
+      gallery_output += `<div class="carousel-item-c swiper-slide">
+      <div class="card-box-b card-shadow news-box">
+        <div class="img-box-b">
+          <img
+            src="assets/img/${property.picture}"
+            alt=""
+            class="img-b img-fluid"
+          />
+        </div>
+        <div class="card-overlay">
+          <div class="card-header-b">
+            <div class="card-category-b">
+              <a href="#" class="category-b">${property.type}</a>
+            </div>
+            <div class="card-title-b">
+              <h2 class="title-2">
+                <a href="blog-single.html"
+                  >House is comming <br />
+                  new</a
+                >
+              </h2>
+            </div>
+            <div class="card-date">
+              <span class="date-b">18 Sep. 2017</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>`;
     }
 
-    placeholder.innerHTML = out;
-})
-.catch(function (err) {
-  console.log(err);
-})
+    document.querySelector("#latest-properties-output").innerHTML = latest_properties_output;
+    document.querySelector("#gallery-output").innerHTML = gallery_output;
+  })
+  .catch(function (err) {
+    console.log(err);
+  })
