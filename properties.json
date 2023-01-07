@@ -1,17 +1,22 @@
 [
     {
         "id":"prop1",
-        "type":"House",
-        "bedrooms":3,
+        "type":"Rent",
+        "houseType":"House",
         "price":750000,
+        "area":500,
+        "bedrooms":3,        
+        "baths":2,
+        "garages":2,        
         "tenure":"Freehold",
         "description":"Attractive three bedroom semi-detached family home situated within 0.5 miles of Petts Wood station with fast trains to London and within easy walking distance of local shops, schools, bus routes and National Trust woodland. The property comprises; two receptions, fitted 18'9 x 10'1 kitchen/breakfast room and conservatory. The property also benefits from having a utility room and cloakroom. To the first floor there are three bedrooms and a family bathroom with separate WC. Additional features include double glazing, gas central heating and a well presented interior...",
+        "title":"Apartment in calm neighbourhood",
         "location":"Petts Wood Road, Petts Wood, Orpington",
         "picture":"properties/prop1.jpg",
         "url":"properties/prop1.html",
         "added": {
-            "month":"October",
             "day":12,
+            "month":"October",
             "year":2022
         }
     },

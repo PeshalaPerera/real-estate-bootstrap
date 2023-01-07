@@ -171,6 +171,11 @@ fetch("properties.json")
                   >Travel is comming <br />
                   new</a
                 >
+                <br>
+                <a href="#" class="link-a"
+                  >View Property
+                  <span class="bi bi-chevron-right"></span>
+                </a>
               </h2>
             </div>
             <div class="card-date">
@@ -182,9 +187,9 @@ fetch("properties.json")
     </div>`;
     }
 
-    document.querySelector("#latest-properties-output").innerHTML = latest_properties_output;
-    document.querySelector("#gallery-output").innerHTML = gallery_output;
-    document.querySelector("#our-properties-output").innerHTML = our_properties_output;
+    // document.querySelector("#latest-properties-output").innerHTML = latest_properties_output;
+    // document.querySelector("#gallery-output").innerHTML = gallery_output;
+    // document.querySelector("#our-properties-output").innerHTML = our_properties_output;
     document.querySelector("#our-gallery").innerHTML = our_gallery;
   })
   .catch(function (err) {
