@@ -7,6 +7,7 @@ fetch("properties.json")
     let gallery_output = "";
     let our_properties_output = "";
     let our_gallery = "";
+    let your_favourites = "";
 
     for (let property of properties) {
       latest_properties_output += `<div class="carousel-item-b swiper-slide">
@@ -184,13 +185,48 @@ fetch("properties.json")
           </div>
         </div>
       </div>
-    </div>`;
+      </div>`;
+
+      your_favourites += `<div class="col-md-4">
+      <div class="card-box-d">
+        <div class="card-img-d">
+          <img src="assets/img/${property.picture}" alt="" class="img-d img-fluid">
+        </div>
+        <div class="card-overlay card-overlay-hover">
+          <div class="card-header-d">
+            <div class="card-title-d align-self-center">
+              <h3 class="title-d">
+                <a href="#" class="link-two">Margaret Sotillo
+                  <br> Escala</a>
+              </h3>
+            </div>
+          </div>
+          <div class="card-body-d">
+            <p class="content-d color-text-a">
+              Sed porttitor lectus nibh, Cras ultricies ligula sed magna dictum porta two.
+            </p>
+          </div>
+          <div class="card-footer-d">
+            <div class="socials-footer d-flex justify-content-center">
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <a href="#" class="link-one">
+                  <i class="bi bi-trash fs-1" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>                  
+        </div>
+      </div>
+      </div>`;
     }
 
     // document.querySelector("#latest-properties-output").innerHTML = latest_properties_output;
     // document.querySelector("#gallery-output").innerHTML = gallery_output;
     // document.querySelector("#our-properties-output").innerHTML = our_properties_output;
-    document.querySelector("#our-gallery").innerHTML = our_gallery;
+    // document.querySelector("#our-gallery").innerHTML = our_gallery;
+    document.querySelector("#your-favourites").innerHTML = your_favourites;
   })
   .catch(function (err) {
     console.log(err);
