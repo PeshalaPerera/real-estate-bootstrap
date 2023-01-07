@@ -1,7 +1,7 @@
 [
     {
-        "id":"prop1",
-        "type":"Rent",
+        "id":"1000",
+        "status":"Rent",
         "houseType":"House",
         "price":750000,
         "area":500,
@@ -21,7 +21,7 @@
         }
     },
     {
-        "id":"prop2",
+        "id":"1001",
         "type":"Flat",
         "bedrooms":2,
         "price":399995,
