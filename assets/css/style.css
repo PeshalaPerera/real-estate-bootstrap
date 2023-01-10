@@ -63,6 +63,10 @@ a:hover {
     text-decoration: none;
 }
 
+.logo { 
+    width: 100px; 
+}
+
 /*==================
 	ADVANCE SEARCH SECTION
 ====================*/
