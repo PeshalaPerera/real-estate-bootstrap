@@ -244,10 +244,10 @@ function assignProperties(propertyType, properties) {
             setGalleryView(properties);
             break;
         }
-        case 'find': {
-            setGalleryView(properties);
-            break;
-        }
+        // case 'find': {
+        //     setGalleryView(properties);
+        //     break;
+        // }
         case 'property-grid': {
             setOuPropertiesView(properties);
             break;

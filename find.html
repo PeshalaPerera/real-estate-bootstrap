@@ -8,6 +8,9 @@
         <meta content="" name="description" />
         <meta content="" name="keywords" />
 
+        <!-- <link href="jquery-ui.css" rel="stylesheet"> -->
+        <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+        
         <!-- Favicons -->
         <link href="assets/img/favicon.png" rel="icon" />
         <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
@@ -95,17 +98,17 @@
                             <div class="mb-2 row">
                                 <div class="form-group col mt-3">
                                     <label class="pb-2" for="Type">Type</label>
-                                    <select class="form-control form-select form-control-a" id="search-type-input">
-                                        <option value="all">All Type</option>
+                                    <select class="form-control form-select form-control-a" name="searchType" id="searchType">
+                                        <option value="all">Any</option>
                                         <option value="RENT">For Rent</option>
                                         <option value="SALE">For Sale</option>
                                         <option value="OPEN">Open House</option>
                                     </select>
                                 </div>
                                 <div class="form-group col mt-3">
-                                    <label class="pb-2" for="city">City</label>
-                                    <select class="form-control form-select form-control-a" id="search-city-input">
-                                        <option value="all">All City</option>
+                                    <label class="pb-2" for="city">Property type</label>
+                                    <select class="form-control form-select form-control-a" name="searchPropertyType" id="searchPropertyType">
+                                        <option value="all">Any</option>
                                         <option value="Alabama">Alabama</option>
                                         <option value="Arizona">Arizona</option>
                                         <option value="California">California</option>
@@ -115,26 +118,16 @@
                             </div>
                             <div class="mb-2 row">
                                 <div class="form-group col mt-3">
-                                    <label class="pb-2" for="bedrooms">Bedrooms</label>
-                                    <select class="form-control form-select form-control-a" id="search-bedrooms-input">
-                                        <option value="any">Any</option>
-                                        <option value="1">01</option>
-                                        <option value="2">02</option>
-                                        <option value="3">03</option>
-                                    </select>
+                                    <label class="pb-2" for="bedrooms">Min Bedrooms</label>
+                                    <input name="maxBedroomsSpinner" id="maxBedroomsSpinner" value="3">
                                 </div>
                                 <div class="form-group col mt-3">
-                                    <label class="pb-2" for="bathrooms">Bathrooms</label>
-                                    <select class="form-control form-select form-control-a" id="search-bathrooms-input">
-                                        <option value="any">Any</option>
-                                        <option value="1">01</option>
-                                        <option value="2">02</option>
-                                        <option value="3">03</option>
-                                    </select>
+                                    <label class="pb-2" for="bathrooms">Max Bedrooms</label>
+                                    <input name="minBedroomsSpinner" id="minBedroomsSpinner" value="3">
                                 </div>
                                 <div class="form-group col mt-3">
-                                    <label class="pb-2" for="garages">Garages</label>
-                                    <select class="form-control form-select form-control-a" id="search-garages-input">
+                                    <label class="pb-2" for="garages">Bathrooms</label>
+                                    <select class="form-control form-select form-control-a" name="searchBathroomsInput" id="searchBathroomsInput">
                                         <option value="any">Any</option>
                                         <option value="1">01</option>
                                         <option value="2">02</option>
@@ -144,24 +137,9 @@
                             </div>
                             <div class="mb-2 row">
                                 <div class="form-group col mt-3">
-                                    <label class="pb-2" for="price">Min Price</label>
-                                    <select class="form-control form-select form-control-a" id="search-min-price-input">
-                                        <option value="0">$0</option>
-                                        <option value="50000">$50,000</option>
-                                        <option value="100000">$100,000</option>
-                                        <option value="150000">$150,000</option>
-                                        <option value="200000">$200,000</option>
-                                    </select>
-                                </div>
-                                <div class="form-group col mt-3">
-                                    <label class="pb-2" for="price">Max Price</label>
-                                    <select class="form-control form-select form-control-a" id="search-max-price-input">
-                                        <option value="0">$0</option>
-                                        <option value="50000">$50,000</option>
-                                        <option value="100000">$100,000</option>
-                                        <option value="150000">$150,000</option>
-                                        <option value="200000">$200,000</option>
-                                    </select>
+                                    <label class="pb-2" for="price">Price Range</label><br>
+                                    <input class="form-control form-input" type="text" id="priceRange" readonly class="goldSliderText"><p></p>
+                                    <div id="slider-range"></div>
                                 </div>
                             </div>
                             <div class="col-md-12 py-4">
@@ -176,11 +154,14 @@
             <!-- End Property Search Section -->>
 
             <!-- =======  Blog Grid ======= -->
-            <section class="news-grid grid">
-                <div class="container">
+            <!-- <section class="news-grid grid"> -->
+                <!-- <div class="container">
                     <div class="row" id="gallery-output"></div>
+                </div> -->
+                <div id="Placeholder">
+
                 </div>
-            </section>
+            <!-- </section> -->
             <!-- End Blog Grid-->
         </main>
         <!-- End #main -->
@@ -277,6 +258,10 @@
             ><i class="bi bi-arrow-up-short"></i
         ></a>
 
+        <link href="assets/css/jquery-ui.css" rel="stylesheet">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
         <!-- Vendor JS Files -->
         <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
         <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
@@ -285,6 +270,8 @@
         <!-- Template Main JS File -->
         <script src="assets/js/main.js"></script>
         <script src="assets/js/script.js"></script>
-        <script src="assets/js/find.js"></script>
+        <script src="assets/js/jQueryA.js"></script>
+        <script src="assets/js/jquery-ui.js"></script>
+        <!-- <script src="assets/js/find.js"></script> -->
     </body>
 </html>

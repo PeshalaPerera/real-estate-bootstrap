@@ -67,6 +67,10 @@ a:hover {
     width: 100px; 
 }
 
+.btn .btn-primary {
+    background-color: #0077b6;
+}
+
 /*==================
 	ADVANCE SEARCH SECTION
 ====================*/
