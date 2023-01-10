@@ -9,8 +9,8 @@
         <meta content="" name="keywords" />
 
         <!-- <link href="jquery-ui.css" rel="stylesheet"> -->
-        <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
-        
+        <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet" />
+
         <!-- Favicons -->
         <link href="assets/img/favicon.png" rel="icon" />
         <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
@@ -98,7 +98,11 @@
                             <div class="mb-2 row">
                                 <div class="form-group col mt-3">
                                     <label class="pb-2" for="Type">Type</label>
-                                    <select class="form-control form-select form-control-a" name="searchType" id="searchType">
+                                    <select
+                                        class="form-control form-select form-control-a"
+                                        name="searchType"
+                                        id="searchType"
+                                    >
                                         <option value="all">Any</option>
                                         <option value="RENT">For Rent</option>
                                         <option value="SALE">For Sale</option>
@@ -107,7 +111,11 @@
                                 </div>
                                 <div class="form-group col mt-3">
                                     <label class="pb-2" for="city">Property type</label>
-                                    <select class="form-control form-select form-control-a" name="searchPropertyType" id="searchPropertyType">
+                                    <select
+                                        class="form-control form-select form-control-a"
+                                        name="searchPropertyType"
+                                        id="searchPropertyType"
+                                    >
                                         <option value="all">Any</option>
                                         <option value="Alabama">Alabama</option>
                                         <option value="Arizona">Arizona</option>
@@ -119,15 +127,19 @@
                             <div class="mb-2 row">
                                 <div class="form-group col mt-3">
                                     <label class="pb-2" for="bedrooms">Min Bedrooms</label>
-                                    <input name="maxBedroomsSpinner" id="maxBedroomsSpinner" value="3">
+                                    <input name="maxBedroomsSpinner" id="maxBedroomsSpinner" value="3" />
                                 </div>
                                 <div class="form-group col mt-3">
                                     <label class="pb-2" for="bathrooms">Max Bedrooms</label>
-                                    <input name="minBedroomsSpinner" id="minBedroomsSpinner" value="3">
+                                    <input name="minBedroomsSpinner" id="minBedroomsSpinner" value="3" />
                                 </div>
                                 <div class="form-group col mt-3">
                                     <label class="pb-2" for="bathrooms">Bathrooms</label>
-                                    <select class="form-control form-select form-control-a" name="searchBathroomsInput" id="searchBathroomsInput">
+                                    <select
+                                        class="form-control form-select form-control-a"
+                                        name="searchBathroomsInput"
+                                        id="searchBathroomsInput"
+                                    >
                                         <option value="any">Any</option>
                                         <option value="1">01</option>
                                         <option value="2">02</option>
@@ -137,8 +149,15 @@
                             </div>
                             <div class="mb-2 row">
                                 <div class="form-group col mt-3">
-                                    <label class="pb-2" for="price">Price Range</label><br>
-                                    <input class="form-control form-input" type="text" id="priceRange" readonly class="goldSliderText"><p></p>
+                                    <label class="pb-2" for="price">Price Range</label><br />
+                                    <input
+                                        class="form-control form-input"
+                                        type="text"
+                                        id="priceRange"
+                                        readonly
+                                        class="goldSliderText"
+                                    />
+                                    <p></p>
                                     <div id="slider-range"></div>
                                 </div>
                             </div>
@@ -153,16 +172,92 @@
             </div>
             <!-- End Property Search Section -->>
 
-            <!-- =======  Blog Grid ======= -->
-            <!-- <section class="news-grid grid"> -->
-                <!-- <div class="container">
-                    <div class="row" id="gallery-output"></div>
-                </div> -->
-                <div id="Placeholder">
+            <!-- =======  Property Single ======= -->
+            <!-- <div id="Placeholder"></div> -->
 
+            <section class="agent-single">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="agent-avatar-box">
+                                        <img src="assets/img/agent-7.jpg" alt="" class="agent-avatar img-fluid" />
+                                    </div>
+                                </div>
+                                <div class="col-md-5 section-md-t3">
+                                    <div class="agent-info-box">
+                                        <div class="agent-title">
+                                            <div class="title-box-d">
+                                                <h3 class="title-d">
+                                                    Margaret Stone <br />
+                                                    Escala
+                                                </h3>
+                                            </div>
+                                        </div>
+                                        <div class="agent-content mb-3">
+                                            <p class="content-d color-text-a">
+                                                Sed porttitor lectus nibh. Praesent sapien massa, convallis a
+                                                pellentesque nec, egestas non nisi. Vivamus suscipit tortor eget felis
+                                                porttitor volutpat. Vivamus suscipit tortor eget felis porttitor
+                                                volutpat.
+                                            </p>
+                                            <div class="info-agents color-a">
+                                                <p>
+                                                    <strong>Phone: </strong>
+                                                    <span class="color-text-a"> +54 356 945234 </span>
+                                                </p>
+                                                <p>
+                                                    <strong>Mobile: </strong>
+                                                    <span class="color-text-a"> 999 123 456 789</span>
+                                                </p>
+                                                <p>
+                                                    <strong>Email: </strong>
+                                                    <span class="color-text-a"> agents@example.com</span>
+                                                </p>
+                                                <p>
+                                                    <strong>skype: </strong>
+                                                    <span class="color-text-a"> Margaret.Es</span>
+                                                </p>
+                                                <p>
+                                                    <strong>Email: </strong>
+                                                    <span class="color-text-a"> agents@example.com</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="socials-footer">
+                                            <ul class="list-inline">
+                                                <li class="list-inline-item">
+                                                    <a href="#" class="link-one">
+                                                        <i class="bi bi-facebook" aria-hidden="true"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="#" class="link-one">
+                                                        <i class="bi bi-twitter" aria-hidden="true"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="#" class="link-one">
+                                                        <i class="bi bi-instagram" aria-hidden="true"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="#" class="link-one">
+                                                        <i class="bi bi-linkedin" aria-hidden="true"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            <!-- </section> -->
-            <!-- End Blog Grid-->
+            </section>
+            <!-- End Property Single -->
+
         </main>
         <!-- End #main -->
 
@@ -258,7 +353,7 @@
             ><i class="bi bi-arrow-up-short"></i
         ></a>
 
-        <link href="assets/css/jquery-ui.css" rel="stylesheet">
+        <link href="assets/css/jquery-ui.css" rel="stylesheet" />
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
