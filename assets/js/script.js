@@ -34,10 +34,6 @@ function getLatestPropertiesView(property) {
                                     <h4 class="card-info-title">Baths</h4>
                                     <span>${property.baths}</span>
                                 </li>
-                                <li>
-                                    <h4 class="card-info-title">Garages</h4>
-                                    <span>${property.garages}</span>
-                                </li>
                             </ul>
                         </div>
                     </div>
@@ -76,50 +72,62 @@ function getGalleryView(property) {
 
 function getOuPropertiesView(property) {
     return `
-        <div class="col-md-4">
-            <div class="card-box-a card-shadow">
-                <div class="img-box-a">
-                    <img src="assets/img/${property.picture}" alt="${property.title}" class="img-a img-fluid" />
-                </div>
-                <div class="card-overlay">
-                    <div class="card-overlay-a-content">
-                        <div class="card-header-a">
-                            <h2 class="card-title-a">
-                                <a href="#">${property.title}</a>
-                            </h2>
-                        </div>
-                        <div class="card-body-a">
-                            <div class="price-box d-flex">
-                                <span class="price-a">${property.status} | $${property.price}</span>
-                            </div>
-                            <a href="property-single.html" class="link-a">
-                                Click here to view <span class="bi bi-chevron-right"></span>
-                            </a>
-                        </div>
-                        <div class="card-footer-a">
-                            <ul class="card-info d-flex justify-content-around">
-                                <li>
-                                    <h4 class="card-info-title">Area</h4>
-                                    <span>${property.area}<sup>2</sup></span>
-                                </li>
-                                <li>
-                                    <h4 class="card-info-title">Beds</h4>
-                                    <span>${property.bedrooms}</span>
-                                </li>
-                                <li>
-                                    <h4 class="card-info-title">Baths</h4>
-                                    <span>${property.baths}</span>
-                                </li>
-                                <li>
-                                    <h4 class="card-info-title">Garages</h4>
-                                    <span>${property.garages}</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+    <div class="col-md-4">
+    <div class="card-box-a card-shadow">
+      <div class="img-box-a">
+        <img
+          src="assets/img/${property.picture}"
+          alt=""
+          class="img-a img-fluid"
+        />
+      </div>
+      <div class="card-overlay">
+        <div class="card-overlay-a-content">
+          <div class="card-header-a">
+            <h2 class="card-title-a">
+              <a href="#"
+                >204 Mount <br />
+                Olive Road Two</a
+              >
+            </h2>
+          </div>
+          <div class="card-body-a">
+            <div class="price-box d-flex">
+              <span class="price-a">rent | $ 12.000</span>
             </div>
+            <a href="property-single.html" class="link-a"
+              >Click here to view
+              <span class="bi bi-chevron-right"></span>
+            </a>
+          </div>
+          <div class="card-footer-a">
+            <ul class="card-info d-flex justify-content-around">
+              <li>
+                <h4 class="card-info-title">Area</h4>
+                <span
+                  >340m
+                  <sup>2</sup>
+                </span>
+              </li>
+              <li>
+                <h4 class="card-info-title">Beds</h4>
+                <span>2</span>
+              </li>
+              <li>
+                <h4 class="card-info-title">Baths</h4>
+                <span>4</span>
+              </li>
+              <li>
+                <a href="#" class="link-one">
+                  <i class="bi bi-heart fs-1" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
+      </div>
+    </div>
+    </div>
     `;
 }
 
