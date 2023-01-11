@@ -3,6 +3,19 @@ $(function () {
 });
 
 $(function () {
+	$("#draggerble").draggable();
+});
+
+$("#droppable").droppable({
+	drop: function (event, ui) {
+		$(this)
+			.addClass("ui-state-highlight")
+			.find("p")
+			.html("Dropped!");
+	}
+});
+
+$(function () {
 	$('#maxBedroomsSpinner').spinner({
 		min: 0,
 		max: 12,
@@ -77,7 +90,7 @@ $(function () {
 
 		filteredProperties.forEach(prop => {
 			propertySinglePlaceholderElement.innerHTML += `
-                <div class="container">
+                <div class="container" id="draggerble">
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="row">
