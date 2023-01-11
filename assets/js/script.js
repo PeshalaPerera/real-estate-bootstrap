@@ -118,9 +118,8 @@ function getOuPropertiesView(property) {
                 <span>4</span>
               </li>
               <li>
-                <a href="#" class="link-one">
-                  <i class="bi bi-heart fs-1" aria-hidden="true"></i>
-                </a>
+                <p id="${property.id}">
+                <button class="addFavourites"><i class="bi bi-heart fs-1" aria-hidden="true"></i></button>
               </li>
             </ul>
           </div>
@@ -184,9 +183,8 @@ function getFavouritesView(property) {
                         <div class="socials-footer d-flex justify-content-center">
                             <ul class="list-inline">
                                 <li class="list-inline-item">
-                                    <a href="#" class="link-one">
-                                        <i class="bi bi-trash fs-1" aria-hidden="true"></i>
-                                    </a>
+                                    <p id="${property.id}">
+                                    <button class="addFavourites"><i class="bi bi-trash fs-1" aria-hidden="true"></i></button>
                                 </li>
                             </ul>
                         </div>
