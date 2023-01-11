@@ -1,16 +1,16 @@
-fetch("properties.json")
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (properties) {
-    let latest_properties_output = "";
-    let gallery_output = "";
-    let our_properties_output = "";
-    let our_gallery = "";
-    let your_favourites = "";
+fetch('properties.json')
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (properties) {
+        let latest_properties_output = '';
+        let gallery_output = '';
+        let our_properties_output = '';
+        let our_gallery = '';
+        let your_favourites = '';
 
-    for (let property of properties) {
-      latest_properties_output += `<div class="carousel-item-b swiper-slide">
+        for (let property of properties) {
+            latest_properties_output += `<div class="carousel-item-b swiper-slide">
         <div class="card-box-a card-shadow">
           <div class="img-box-a">
             <img
@@ -66,7 +66,7 @@ fetch("properties.json")
         </div>
       </div>`;
 
-      gallery_output += `<div class="carousel-item-c swiper-slide">
+            gallery_output += `<div class="carousel-item-c swiper-slide">
       <div class="card-box-b card-shadow news-box">
         <div class="img-box-b">
           <img
@@ -96,7 +96,7 @@ fetch("properties.json")
       </div>
       </div>`;
 
-      our_properties_output += `<div class="col-md-4">
+            our_properties_output += `<div class="col-md-4">
       <div class="card-box-a card-shadow">
         <div class="img-box-a">
           <img
@@ -157,7 +157,7 @@ fetch("properties.json")
       </div>
       </div>`;
 
-      our_gallery += `<div class="col-md-4">
+            our_gallery += `<div class="col-md-4">
       <div class="card-box-b card-shadow news-box">
         <div class="img-box-b">
           <img
@@ -192,7 +192,7 @@ fetch("properties.json")
       </div>
       </div>`;
 
-      your_favourites += `<div class="col-md-4">
+            your_favourites += `<div class="col-md-4">
       <div class="card-box-d">
         <div class="card-img-d">
           <img src="assets/img/${property.picture}" alt="" class="img-d img-fluid">
@@ -225,14 +225,14 @@ fetch("properties.json")
         </div>
       </div>
       </div>`;
-    }
+        }
 
-    // document.querySelector("#latest-properties-output").innerHTML = latest_properties_output;
-    // document.querySelector("#gallery-output").innerHTML = gallery_output;
-    document.querySelector("#our-properties-output").innerHTML = our_properties_output;
-    // document.querySelector("#our-gallery").innerHTML = our_gallery;
-    // document.querySelector("#your-favourites").innerHTML = your_favourites;
-  })
-  .catch(function (err) {
-    console.log(err);
-  })
+        // document.querySelector("#latest-properties-output").innerHTML = latest_properties_output;
+        // document.querySelector("#gallery-output").innerHTML = gallery_output;
+        document.querySelector('#our-properties-output').innerHTML = our_properties_output;
+        // document.querySelector("#our-gallery").innerHTML = our_gallery;
+        // document.querySelector("#your-favourites").innerHTML = your_favourites;
+    })
+    .catch(function (err) {
+        console.log(err);
+    });
