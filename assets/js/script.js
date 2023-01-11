@@ -3,18 +3,18 @@ function getLatestPropertiesView(property) {
         <div class="carousel-item-b swiper-slide">
             <div class="card-box-a card-shadow">
                 <div class="img-box-a">
-                    <img src="assets/img/${property.picture}" alt="${property.title}" class="img-a img-fluid" />
+                    <img src="assets/img/${property.picture}" alt="${property.location}" class="img-a img-fluid" />
                 </div>
                 <div class="card-overlay">
                     <div class="card-overlay-a-content">
                         <div class="card-header-a">
                             <h2 class="card-title-a">
-                                <a href="property-single.html">${property.title}</a>
+                                <a href="property-single.html">${property.location}</a>
                             </h2>
                         </div>
                         <div class="card-body-a">
                             <div class="price-box d-flex">
-                                <span class="price-a">${property.status} | $${property.price}</span>
+                                <span class="price-a">${property.tenure} | $ ${property.price}</span>
                             </div>
                             <a href="#" class="link-a">
                                 View Property <span class="bi bi-chevron-right"></span>
@@ -48,7 +48,7 @@ function getGalleryView(property) {
         <div class="carousel-item-c swiper-slide">
             <div class="card-box-b card-shadow news-box">
                 <div class="img-box-b">
-                    <img src="assets/img/${property.picture}" alt="${property.title}" class="img-b img-fluid"/>
+                    <img src="assets/img/${property.picture}" alt="${property.location}" class="img-b img-fluid"/>
                 </div>
                 <div class="card-overlay">
                     <div class="card-header-b">
@@ -57,7 +57,7 @@ function getGalleryView(property) {
                         </div>
                         <div class="card-title-b">
                             <h2 class="title-2">
-                                <a href="blog-single.html">${property.title}</a>
+                                <a href="blog-single.html">${property.location}</a>
                             </h2>
                         </div>
                         <div class="card-date">
@@ -86,14 +86,13 @@ function getOuPropertiesView(property) {
           <div class="card-header-a">
             <h2 class="card-title-a">
               <a href="#"
-                >204 Mount <br />
-                Olive Road Two</a
+                >${property.location}</a
               >
             </h2>
           </div>
           <div class="card-body-a">
             <div class="price-box d-flex">
-              <span class="price-a">rent | $ 12.000</span>
+              <span class="price-a">${property.tenure} | $ ${property.price}</span>
             </div>
             <a href="property-single.html" class="link-a"
               >Click here to view
@@ -105,17 +104,17 @@ function getOuPropertiesView(property) {
               <li>
                 <h4 class="card-info-title">Area</h4>
                 <span
-                  >340m
+                  >${property.area}m
                   <sup>2</sup>
                 </span>
               </li>
               <li>
                 <h4 class="card-info-title">Beds</h4>
-                <span>2</span>
+                <span>${property.bedrooms}</span>
               </li>
               <li>
                 <h4 class="card-info-title">Baths</h4>
-                <span>4</span>
+                <span>${property.baths}</span>
               </li>
               <li>
                 <p id="${property.id}">
@@ -135,7 +134,7 @@ function getOurGalleyView(property) {
         <div class="col-md-4">
             <div class="card-box-b card-shadow news-box">
                 <div class="img-box-b">
-                    <img src="assets/img/${property.picture}" alt="${property.title}" class="img-b img-fluid" />
+                    <img src="assets/img/${property.picture}" alt="${property.location}" class="img-b img-fluid" />
                 </div>
                 <div class="card-overlay">
                     <div class="card-header-b">
@@ -144,7 +143,7 @@ function getOurGalleyView(property) {
                         </div>
                         <div class="card-title-b">
                             <h2 class="title-2">
-                                 <a href="#">${property.title}</a>
+                                 <a href="#">${property.location}</a>
                                 <br />
                                 <a href="#" class="link-a">
                                     View Property <span class="bi bi-chevron-right"></span>
@@ -166,13 +165,13 @@ function getFavouritesView(property) {
         <div class="col-md-4">
             <div class="card-box-d">
                 <div class="card-img-d">
-                    <img src="assets/img/${property.picture}" alt="${property.title}" class="img-d img-fluid" />
+                    <img src="assets/img/${property.picture}" alt="${property.location}" class="img-d img-fluid" />
                 </div>
                 <div class="card-overlay card-overlay-hover">
                     <div class="card-header-d">
                         <div class="card-title-d align-self-center">
                             <h3 class="title-d">
-                                <a href="#"  class="link-two">${property.title}</a>
+                                <a href="#"  class="link-two">${property.location}</a>
                             </h3>
                         </div>
                     </div>

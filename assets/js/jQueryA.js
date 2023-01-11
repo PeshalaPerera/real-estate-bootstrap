@@ -96,7 +96,7 @@ $(function () {
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="agent-avatar-box">
-                                        <img src="assets/img/agent-7.jpg" alt="" class="agent-avatar img-fluid" />
+                                        <img src="assets/img/${prop.picture}" alt="" class="agent-avatar img-fluid" />
                                     </div>
                                 </div>
                                 <div class="col-md-5 section-md-t3">
@@ -114,56 +114,8 @@ $(function () {
                                         </div>
                                         <div class="agent-content mb-3">
                                             <p class="content-d color-text-a">
-                                                Sed porttitor lectus nibh. Praesent sapien massa, convallis a pellentesque nec, egestas
-                                                non nisi. Vivamus suscipit tortor eget felis porttitor volutpat. Vivamus suscipit tortor
-                                                eget felis porttitor volutpat.
+												${prop.description}
                                             </p>
-                                            <div class="info-agents color-a">
-                                                <p>
-                                                    <strong>Phone: </strong>
-                                                    <span class="color-text-a"> +54 356 945234 </span>
-                                                </p>
-                                                <p>
-                                                    <strong>Mobile: </strong>
-                                                    <span class="color-text-a"> 999 123 456 789</span>
-                                                </p>
-                                                <p>
-                                                    <strong>Email: </strong>
-                                                    <span class="color-text-a"> agents@example.com</span>
-                                                </p>
-                                                <p>
-                                                    <strong>skype: </strong>
-                                                    <span class="color-text-a"> Margaret.Es</span>
-                                                </p>
-                                                <p>
-                                                    <strong>Email: </strong>
-                                                    <span class="color-text-a"> agents@example.com</span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="socials-footer">
-                                            <ul class="list-inline">
-                                                <li class="list-inline-item">
-                                                    <a href="#" class="link-one">
-                                                        <i class="bi bi-facebook" aria-hidden="true"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#" class="link-one">
-                                                        <i class="bi bi-twitter" aria-hidden="true"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#" class="link-one">
-                                                        <i class="bi bi-instagram" aria-hidden="true"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#" class="link-one">
-                                                        <i class="bi bi-linkedin" aria-hidden="true"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
                                         </div>
                                     </div>
                                 </div>
