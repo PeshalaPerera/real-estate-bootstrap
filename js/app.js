@@ -1,44 +1,44 @@
 (function () {
-  function getNavigationHTML() {
-    function getCurrentPage() {
-      const path = window.location.pathname;
-      const page = path.split("/").pop();
-      console.log(`Current page: ${page}`);
-      return page;
-    }
+    function getNavigationHTML() {
+        function getCurrentPage() {
+            const path = window.location.pathname;
+            const page = path.split('/').pop();
+            console.log(`Current page: ${page}`);
+            return page;
+        }
 
-    function getStyles(isActive) {
-      return isActive ? "active" : "";
-    }
+        function getStyles(isActive) {
+            return isActive ? 'active' : '';
+        }
 
-    const currentPage = getCurrentPage();
+        const currentPage = getCurrentPage();
 
-    const indexPage = "index.html";
-    const findPage = "find.html";
-    const favouritesPage = "favourites.html";
-    const propertyGridPage = "property-grid.html";
+        const indexPage = 'index.html';
+        const findPage = 'find.html';
+        const favouritesPage = 'favourites.html';
+        const propertyGridPage = 'property-grid.html';
 
-    let isIndexPageActive = false;
-    let isFindPageActive = false;
-    let isFavouritesPageActive = false;
-    let isPropertyPageActive = false;
+        let isIndexPageActive = false;
+        let isFindPageActive = false;
+        let isFavouritesPageActive = false;
+        let isPropertyPageActive = false;
 
-    switch (currentPage) {
-      case indexPage:
-        isIndexPageActive = true;
-        break;
-      case findPage:
-        isFindPageActive = true;
-        break;
-      case favouritesPage:
-        isFavouritesPageActive = true;
-        break;
-      case propertyGridPage:
-        isPropertyPageActive = true;
-        break;
-    }
+        switch (currentPage) {
+            case indexPage:
+                isIndexPageActive = true;
+                break;
+            case findPage:
+                isFindPageActive = true;
+                break;
+            case favouritesPage:
+                isFavouritesPageActive = true;
+                break;
+            case propertyGridPage:
+                isPropertyPageActive = true;
+                break;
+        }
 
-    return `<div class="container">
+        return `<div class="container">
     <button
         class="navbar-toggler collapsed"
         type="button"
@@ -52,7 +52,7 @@
         <span></span>
         <span></span>
     </button>
-    <img class="logo" src="assets/img/logo.png" alt="dreamHome" />
+    <img class="logo" src="images/icons/logo.png" alt="dreamHome" />
     <a class="navbar-brand text-brand" href="${indexPage}">Dream<span class="color-b">Home</span></a>
 
     <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
@@ -75,10 +75,10 @@
         </ul>
     </div>
 </div>`;
-  }
+    }
 
-  function getFooterHTML() {
-    return `<section class="section-footer">
+    function getFooterHTML() {
+        return `<section class="section-footer">
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-md-4">
@@ -223,11 +223,10 @@
         </div>
     </div>
 </div>`;
-  }
+    }
 
-  try {
-    document.getElementById("navigation").innerHTML = getNavigationHTML();
-    document.getElementById("footer").innerHTML = getFooterHTML();
-  } catch (error) {}
-
+    try {
+        document.getElementById('navigation').innerHTML = getNavigationHTML();
+        document.getElementById('footer').innerHTML = getFooterHTML();
+    } catch (error) {}
 })();
