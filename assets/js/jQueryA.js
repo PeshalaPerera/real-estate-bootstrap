@@ -168,9 +168,10 @@ $('#favList').droppable({
             favListList.push(text);
         }
 
-        buildFavouriteList();
+        buildFavouriteList(favListList);
 
         const favouriteKey = 'favourites';
+        localStorage.setItem(favouriteKey, JSON.stringify(favListList));
 
         // var staffIdToAdd = ui.draggable.find(".favIcon").attr("id");
         // var isAdded = false;
@@ -192,10 +193,10 @@ $('#favList').droppable({
     },
 });
 
-function buildFavouriteList() {
+function buildFavouriteList(list) {
     $('#favList').html('');
 
-    for (const obj of favListList) {
+    for (const obj of list) {
         $('#favList').append('<p>' + obj + '</p>');
     }
 
@@ -244,7 +245,13 @@ $('.deleteItemCard').droppable({
     // The acceptance of the item once it touches the to-be-dropped-element favList
     tolerance: 'touch',
     drop: function (event, ui) {
-        console.log(event, ui);
+        const favouriteKey = 'favourites';
+        const currentFavList = JSON.parse(localStorage.getItem(favouriteKey));
+        const text = ui.draggable.find('p')?.context?.innerText;
+        const finalFavouriteList = currentFavList.filter(item => item !== text);
+
+        buildFavouriteList(finalFavouriteList);
+
         // var staffIdToAdd = ui.draggable.find(".favIcon").attr("id");
         // var isAdded = false;
         // var myfav = JSON.parse(localStorage.getItem("favProduct"));
