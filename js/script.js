@@ -3,7 +3,7 @@ function getLatestPropertiesView(property) {
         <div class="carousel-item-b swiper-slide">
             <div class="card-box-a card-shadow">
                 <div class="img-box-a">
-                    <img src="images/properties/${property.picture}" alt="${property.location}" class="img-a img-fluid" />
+                    <img src="${property.picture}" alt="${property.location}" class="img-a img-fluid" />
                 </div>
                 <div class="card-overlay">
                     <div class="card-overlay-a-content">
@@ -49,7 +49,7 @@ function getOuPropertiesView(property) {
     <div class="card-box-a card-shadow">
       <div class="img-box-a">
         <img
-          src="images/properties/${property.picture}"
+          src="${property.picture}"
           alt=""
           class="img-a img-fluid"
         />
@@ -107,7 +107,7 @@ function getFavouritesView(property) {
         <div class="col-md-4">
             <div class="card-box-d">
                 <div class="card-img-d">
-                    <img src="images/properties/${property.picture}" alt="${property.location}" class="img-d img-fluid" />
+                    <img src="${property.picture}" alt="${property.location}" class="img-d img-fluid" />
                 </div>
                 <div class="card-overlay card-overlay-hover">
                     <div class="card-header-d">
