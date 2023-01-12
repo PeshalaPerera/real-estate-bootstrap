@@ -704,7 +704,6 @@ a:hover {
 }
 
 @media (min-width: 768px) {
-
     .navbar-default.navbar-trans .nav-item,
     .navbar-default.navbar-reduce .nav-item {
         margin-left: 15px;
@@ -749,12 +748,12 @@ a:hover {
     transform-origin: left;
 }
 
-.navbar-default.navbar-trans .show>.nav-link:before,
-.navbar-default.navbar-trans .active>.nav-link:before,
+.navbar-default.navbar-trans .show > .nav-link:before,
+.navbar-default.navbar-trans .active > .nav-link:before,
 .navbar-default.navbar-trans .nav-link.show:before,
 .navbar-default.navbar-trans .nav-link.active:before,
-.navbar-default.navbar-reduce .show>.nav-link:before,
-.navbar-default.navbar-reduce .active>.nav-link:before,
+.navbar-default.navbar-reduce .show > .nav-link:before,
+.navbar-default.navbar-reduce .active > .nav-link:before,
 .navbar-default.navbar-reduce .nav-link.show:before,
 .navbar-default.navbar-reduce .nav-link.active:before {
     transform: scaleX(1);
@@ -768,8 +767,8 @@ a:hover {
     color: #03045e;
 }
 
-.navbar-default.navbar-trans .show>.nav-link,
-.navbar-default.navbar-trans .active>.nav-link,
+.navbar-default.navbar-trans .show > .nav-link,
+.navbar-default.navbar-trans .active > .nav-link,
 .navbar-default.navbar-trans .nav-link.show,
 .navbar-default.navbar-trans .nav-link.active {
     color: #03045e;
@@ -793,8 +792,8 @@ a:hover {
     color: #03045e;
 }
 
-.navbar-default.navbar-reduce .show>.nav-link,
-.navbar-default.navbar-reduce .active>.nav-link,
+.navbar-default.navbar-reduce .show > .nav-link,
+.navbar-default.navbar-reduce .active > .nav-link,
 .navbar-default.navbar-reduce .nav-link.show,
 .navbar-default.navbar-reduce .nav-link.active {
     color: #03045e;
@@ -1221,7 +1220,6 @@ a:hover {
 # Card General
 --------------------------------------------------------------*/
 @media (max-width: 767px) {
-
     .card-box-a,
     .card-box-b,
     .card-box-c,
@@ -1238,7 +1236,6 @@ a:hover {
 }
 
 @media (min-width: 768px) {
-
     .grid .card-box-a,
     .grid .card-box-b,
     .grid .card-box-c,
@@ -1264,7 +1261,6 @@ a:hover {
 }
 
 @media (min-width: 768px) {
-
     .card-box-a:hover .img-a,
     .card-box-a:hover .img-b,
     .card-box-b:hover .img-a,
@@ -1274,7 +1270,6 @@ a:hover {
 }
 
 @media (min-width: 768px) {
-
     .card-box-a .price-a,
     .card-box-b .price-a {
         font-size: 0.9rem;
@@ -1282,7 +1277,6 @@ a:hover {
 }
 
 @media (min-width: 992px) {
-
     .card-box-a .price-a,
     .card-box-b .price-a {
         font-size: 1rem;
@@ -1485,7 +1479,6 @@ a:hover {
     border-color: #caf0f8;
 }
 
-
 /* style the card */
 .property_location_draggerble {
     position: relative;
@@ -1494,8 +1487,8 @@ a:hover {
     padding: 5px;
     background-color: #fff;
     border-radius: 4px;
-    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .property_location_draggerble li:hover {
@@ -1504,9 +1497,9 @@ a:hover {
 
 /* change the opacity wwhen move the card */
 .property_location_draggerble.active {
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+    -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=40)';
     filter: alpha(opacity=40);
-    opacity: .4;
+    opacity: 0.4;
 }
 
 /* small and nove infornt of the another card when move the card */
@@ -1516,14 +1509,13 @@ a:hover {
     opacity: 1;
     -webkit-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
-    -webkit-transform: scale(.6);
-    transform: scale(.6);
+    -webkit-transform: scale(0.6);
+    transform: scale(0.6);
 }
 
 .deleteItemCard {
     border: 1px dashed;
 }
-
 
 /*------/ Property Single /-----*/
 .gallery-property {
@@ -2086,8 +2078,8 @@ footer .credits {
     margin-left: 0;
 }
 
-.no-gutters>.col,
-.no-gutters>[class*="col-"] {
+.no-gutters > .col,
+.no-gutters > [class*='col-'] {
     padding-right: 0;
     padding-left: 0;
 }
@@ -2099,4 +2091,11 @@ footer .credits {
 
 .box.showContent .newDiv {
     height: auto;
+}
+
+.deleteItemCard {
+    background-color: red;
+    height: 100px;
+    display: flex;
+    align-items: center;
 }
