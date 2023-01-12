@@ -2,9 +2,133 @@ $(function () {
 	$("#tabs").tabs();
 });
 
-$(function () {
-	$("#draggerble").draggable();
+$("#property_single_placeholder .property_location_draggerble").draggable({
+
+	// brings the item back to its place when dragging is over
+	revert: true,
+
+	// once the dragging starts, we decrease the opactiy of other items
+	// Appending a class as we do that with CSS
+	drag: function () {
+		$(this).addClass("active");
+	},
+
+	// removing the CSS classes once dragging is over.
+	stop: function () {
+		$(this).removeClass("active");
+	}
 });
+
+// Adding to fav list by Droppable for the hard coded items
+$("#favList").droppable({
+
+	// The class that will be appended to the to-be-dropped-element (favList)
+	activeClass: "active",
+
+	// The class that will be appended once we are hovering the to-be-dropped-element (favList)
+	hoverClass: "hover",
+
+	// The acceptance of the item once it touches the to-be-dropped-element favList
+	tolerance: "touch",
+	drop: function (event, ui) {
+		var staffIdToAdd = ui.draggable.find(".favIcon").attr("id");
+		var isAdded = false;
+		var myfav = JSON.parse(localStorage.getItem("favProduct"));
+		for (var i = 0; i < myfav.length; i++) {
+			if (myfav[i] == staffIdToAdd) {
+				isAdded = true;
+			}
+		}
+		if (isAdded == false) {
+			if (myfav == null) {
+				myfav = [];
+			}
+			myfav.push(staffIdToAdd);
+			localStorage.setItem("favProduct", JSON.stringify(myfav));
+
+			location.reload();
+		}
+	}
+});
+
+//------------------------------------------------------
+// Delete from fav list by Draggable the hard coded items
+$("#favList .property_location_draggerble").draggable({
+
+	// brings the item back to its place when dragging is over
+	revert: true,
+
+	// Appending a class as we do that with CSS
+	drag: function () {
+		$(this).addClass("active");
+	},
+
+	// removing the CSS classes once dragging is over.
+	stop: function () {
+		$(this).removeClass("active");
+	}
+	//localStorage.setItem("favProduct", JSON.stringify(myFavourites));
+});
+
+// Adding to fav list by Droppable for the hard coded items
+$(".deleteItemCard").droppable({
+
+	// The class that will be appended to the to-be-dropped-element (favList)
+	//activeClass: "active",
+
+	// The class that will be appended once we are hovering the to-be-dropped-element (favList)
+	//hoverClass: "hover",
+
+	// The acceptance of the item once it touches the to-be-dropped-element favList
+	tolerance: "touch",
+	drop: function (event, ui) {
+		// var staffIdToAdd = ui.draggable.find(".favIcon").attr("id");
+		// var isAdded = false;
+		// var myfav = JSON.parse(localStorage.getItem("favProduct"));
+		// for (var i = 0; i < myfav.length; i++) {
+		//   if (myfav[i] == staffIdToAdd) {
+		//     isAdded = true;
+		//   }
+		// }
+		// if (isAdded == false) {
+		//   if (myfav == null) {
+		//     myfav = [];
+		//   }
+		//   myfav.push(staffIdToAdd);
+		//   localStorage.setItem("favProduct", JSON.stringify(myfav));
+
+		//   location.reload();
+		// }
+		//get the favicon's id which is equal to shoe id
+		var staffIdToDelete = ui.draggable.find(".deleteIcon").attr("id");
+
+		//Get the local storage current items
+		var myFavourites = JSON.parse(localStorage.getItem("favProduct"));
+		if (myFavourites != null) {
+			for (var j = 0; j < myFavourites.length; j++) {
+				if (myFavourites[j] == staffIdToDelete) {
+
+					//delete item from the local storage
+					myFavourites.splice(j, 1);
+					localStorage.setItem("favProduct", JSON.stringify(myFavourites));
+				}
+
+				//reload the page after delete the item to favourite list
+				if (!localStorage.getItem("reload")) {
+					// set reload to true and then reload the page 
+					localStorage.setItem("reload", "true");
+					location.reload();
+				}
+				// after reloading remove "reload" from localStorage 
+				else {
+					localStorage.removeItem("reload");
+				}
+			}
+		}
+	}
+});
+//-----------------------------------------------------------
+
 
 $("#droppable").droppable({
 	drop: function (event, ui) {
@@ -90,38 +214,40 @@ $(function () {
 
 		filteredProperties.forEach(prop => {
 			propertySinglePlaceholderElement.innerHTML += `
-                <div class="container" id="draggerble">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="agent-avatar-box">
-                                        <img src="assets/img/${prop.picture}" alt="" class="agent-avatar img-fluid" />
-                                    </div>
-                                </div>
-                                <div class="col-md-5 section-md-t3">
-                                    <div class="agent-info-box">
-                                        <div class="agent-title">
-                                            <div class="title-box-d">
-                                                <h3 class="title-d">
-                                                    ${prop.location}
-                                                </h3>
-												<a href="property-single.html" class="link-a" style="
-													color: black; ">Click here to view
-													<span class="bi bi-chevron-right"></span>
-												</a>
-                                            </div>
-                                        </div>
-                                        <div class="agent-content mb-3">
-                                            <p class="content-d color-text-a">
-												${prop.description}
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="container">
+                    <div class="card">
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="row">
+									<div class="col-md-6">
+										<div class="agent-avatar-box">
+											<img src="assets/img/${prop.picture}" alt="" class="agent-avatar img-fluid" />
+										</div>
+									</div>
+									<div class="col-md-5 section-md-t3">
+										<div class="agent-info-box">
+											<div class="agent-title">
+												<div class="title-box-d">
+													<h3 class="title-d">
+														${prop.location}
+													</h3>
+													<a href="property-single.html" class="link-a" style="
+														color: black; ">Click here to view
+														<span class="bi bi-chevron-right"></span>
+													</a>
+												</div>
+											</div>
+											<div class="agent-content mb-3">
+												<p class="content-d color-text-a">
+													${prop.description}
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
                 </div>
 			<p></p>
             `;
