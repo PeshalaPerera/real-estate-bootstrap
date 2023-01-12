@@ -2092,3 +2092,10 @@ footer .credits {
 .box.showContent .newDiv {
     height: auto;
 }
+
+.deleteItemCard {
+    background-color: red;
+    height: 100px;
+    display: flex;
+    align-items: center;
+}

@@ -124,7 +124,7 @@ $(function () {
 			<p></p>
             `;
         });
-        
+
         //call the function
         draggableProperty();
     });
@@ -148,6 +148,7 @@ $('.property_location_draggerble').draggable({
 
 // Adding to fav list by Droppable for the hard coded items
 var favListList = [];
+
 $('#favList').droppable({
     // The class that will be appended to the to-be-dropped-element (favList)
     activeClass: 'active',
@@ -160,8 +161,16 @@ $('#favList').droppable({
 
     drop: function (event, ui) {
         const text = ui.draggable.find('h3')?.context?.innerText;
-        favListList.push(text);
+
+        const isAlreadyDropped = favListList.some(fav => fav === text);
+
+        if (!isAlreadyDropped) {
+            favListList.push(text);
+        }
+
         buildFavouriteList();
+
+        const favouriteKey = 'favourites';
 
         // var staffIdToAdd = ui.draggable.find(".favIcon").attr("id");
         // var isAdded = false;
@@ -184,14 +193,31 @@ $('#favList').droppable({
 });
 
 function buildFavouriteList() {
-    $('#favList').innerHTML = '';
+    $('#favList').html('');
+
     for (const obj of favListList) {
         $('#favList').append('<p>' + obj + '</p>');
     }
+
+    $('#favList p').draggable({
+        // brings the item back to its place when dragging is over
+        revert: true,
+
+        // Appending a class as we do that with CSS
+        drag: function () {
+            $(this).addClass('active');
+        },
+
+        // removing the CSS classes once dragging is over.
+        stop: function () {
+            $(this).removeClass('active');
+        },
+        //localStorage.setItem("favProduct", JSON.stringify(myFavourites));
+    });
 }
 //------------------------------------------------------
 // Delete from fav list by Draggable the hard coded items
-$('#favList .property_location_draggerble').draggable({
+$('#favList p').draggable({
     // brings the item back to its place when dragging is over
     revert: true,
 
@@ -218,6 +244,7 @@ $('.deleteItemCard').droppable({
     // The acceptance of the item once it touches the to-be-dropped-element favList
     tolerance: 'touch',
     drop: function (event, ui) {
+        console.log(event, ui);
         // var staffIdToAdd = ui.draggable.find(".favIcon").attr("id");
         // var isAdded = false;
         // var myfav = JSON.parse(localStorage.getItem("favProduct"));
@@ -236,30 +263,30 @@ $('.deleteItemCard').droppable({
         //   location.reload();
         // }
         //get the favicon's id which is equal to shoe id
-        var staffIdToDelete = ui.draggable.find('.deleteIcon').attr('id');
+        // var staffIdToDelete = ui.draggable.find('.deleteIcon').attr('id');
 
-        //Get the local storage current items
-        var myFavourites = JSON.parse(localStorage.getItem('favProduct'));
-        if (myFavourites != null) {
-            for (var j = 0; j < myFavourites.length; j++) {
-                if (myFavourites[j] == staffIdToDelete) {
-                    //delete item from the local storage
-                    myFavourites.splice(j, 1);
-                    localStorage.setItem('favProduct', JSON.stringify(myFavourites));
-                }
+        // //Get the local storage current items
+        // var myFavourites = JSON.parse(localStorage.getItem('favProduct'));
+        // if (myFavourites != null) {
+        //     for (var j = 0; j < myFavourites.length; j++) {
+        //         if (myFavourites[j] == staffIdToDelete) {
+        //             //delete item from the local storage
+        //             myFavourites.splice(j, 1);
+        //             localStorage.setItem('favProduct', JSON.stringify(myFavourites));
+        //         }
 
-                //reload the page after delete the item to favourite list
-                if (!localStorage.getItem('reload')) {
-                    // set reload to true and then reload the page
-                    localStorage.setItem('reload', 'true');
-                    location.reload();
-                }
-                // after reloading remove "reload" from localStorage
-                else {
-                    localStorage.removeItem('reload');
-                }
-            }
-        }
+        //         //reload the page after delete the item to favourite list
+        //         if (!localStorage.getItem('reload')) {
+        //             // set reload to true and then reload the page
+        //             localStorage.setItem('reload', 'true');
+        //             location.reload();
+        //         }
+        //         // after reloading remove "reload" from localStorage
+        //         else {
+        //             localStorage.removeItem('reload');
+        //         }
+        //     }
+        // }
     },
 });
 //-----------------------------------------------------------
