@@ -92,7 +92,7 @@ $(function () {
 								<div class="row">
 									<div class="col-md-6">
 										<div class="agent-avatar-box">
-											<img src="assets/img/${prop.picture}" alt="" class="agent-avatar img-fluid" />
+											<img src="images/properties/${prop.picture}" alt="" class="agent-avatar img-fluid" />
 										</div>
 									</div>
 									<div class="col-md-5 section-md-t3">

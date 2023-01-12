@@ -116,7 +116,7 @@
                                             href="#"
                                             class="img rounded"
                                             style="
-                                                background-image: url(assets/img/footerGallery/insta-1.jpg);
+                                                background-image: url(images/footer/insta-1.jpg);
                                             "
                                         ></a>
                                     </div>
@@ -125,7 +125,7 @@
                                             href="#"
                                             class="img rounded"
                                             style="
-                                                background-image: url(assets/img/footerGallery/insta-2.jpg);
+                                                background-image: url(images/footer/insta-2.jpg);
                                             "
                                         ></a>
                                     </div>
@@ -134,7 +134,7 @@
                                             href="#"
                                             class="img rounded"
                                             style="
-                                                background-image: url(assets/img/footerGallery/insta-3.jpg);
+                                                background-image: url(images/footer/insta-3.jpg);
                                             "
                                         ></a>
                                     </div>
@@ -143,7 +143,7 @@
                                             href="#"
                                             class="img rounded"
                                             style="
-                                                background-image: url(assets/img/footerGallery/insta-4.jpg);
+                                                background-image: url(images/footer/insta-4.jpg);
                                             "
                                         ></a>
                                     </div>
@@ -152,7 +152,7 @@
                                             href="#"
                                             class="img rounded"
                                             style="
-                                                background-image: url(assets/img/footerGallery/insta-5.jpg);
+                                                background-image: url(images/footer/insta-5.jpg);
                                             "
                                         ></a>
                                     </div>
@@ -161,7 +161,7 @@
                                             href="#"
                                             class="img rounded"
                                             style="
-                                                background-image: url(assets/img/footerGallery/insta-6.jpg);
+                                                background-image: url(images/footer/insta-6.jpg);
                                             "
                                         ></a>
                                     </div>
