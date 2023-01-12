@@ -2,141 +2,14 @@ $(function () {
 	$("#tabs").tabs();
 });
 
-$("#property_single_placeholder .property_location_draggerble").draggable({
+$(".readmore-btn").on('click', function(){
 
-	// brings the item back to its place when dragging is over
-	revert: true,
+    $(this).parent().toggleClass("showContent");
 
-	// once the dragging starts, we decrease the opactiy of other items
-	// Appending a class as we do that with CSS
-	drag: function () {
-		$(this).addClass("active");
-	},
+    // Shorthand if-else statement
+    var replaceText = $(this).parent().hasClass("showContent") ? "Read Less" : "Read More";
+    $(this).text(replaceText);
 
-	// removing the CSS classes once dragging is over.
-	stop: function () {
-		$(this).removeClass("active");
-	}
-});
-
-// Adding to fav list by Droppable for the hard coded items
-$("#favList").droppable({
-
-	// The class that will be appended to the to-be-dropped-element (favList)
-	activeClass: "active",
-
-	// The class that will be appended once we are hovering the to-be-dropped-element (favList)
-	hoverClass: "hover",
-
-	// The acceptance of the item once it touches the to-be-dropped-element favList
-	tolerance: "touch",
-	drop: function (event, ui) {
-		var staffIdToAdd = ui.draggable.find(".favIcon").attr("id");
-		var isAdded = false;
-		var myfav = JSON.parse(localStorage.getItem("favProduct"));
-		for (var i = 0; i < myfav.length; i++) {
-			if (myfav[i] == staffIdToAdd) {
-				isAdded = true;
-			}
-		}
-		if (isAdded == false) {
-			if (myfav == null) {
-				myfav = [];
-			}
-			myfav.push(staffIdToAdd);
-			localStorage.setItem("favProduct", JSON.stringify(myfav));
-
-			location.reload();
-		}
-	}
-});
-
-//------------------------------------------------------
-// Delete from fav list by Draggable the hard coded items
-$("#favList .property_location_draggerble").draggable({
-
-	// brings the item back to its place when dragging is over
-	revert: true,
-
-	// Appending a class as we do that with CSS
-	drag: function () {
-		$(this).addClass("active");
-	},
-
-	// removing the CSS classes once dragging is over.
-	stop: function () {
-		$(this).removeClass("active");
-	}
-	//localStorage.setItem("favProduct", JSON.stringify(myFavourites));
-});
-
-// Adding to fav list by Droppable for the hard coded items
-$(".deleteItemCard").droppable({
-
-	// The class that will be appended to the to-be-dropped-element (favList)
-	//activeClass: "active",
-
-	// The class that will be appended once we are hovering the to-be-dropped-element (favList)
-	//hoverClass: "hover",
-
-	// The acceptance of the item once it touches the to-be-dropped-element favList
-	tolerance: "touch",
-	drop: function (event, ui) {
-		// var staffIdToAdd = ui.draggable.find(".favIcon").attr("id");
-		// var isAdded = false;
-		// var myfav = JSON.parse(localStorage.getItem("favProduct"));
-		// for (var i = 0; i < myfav.length; i++) {
-		//   if (myfav[i] == staffIdToAdd) {
-		//     isAdded = true;
-		//   }
-		// }
-		// if (isAdded == false) {
-		//   if (myfav == null) {
-		//     myfav = [];
-		//   }
-		//   myfav.push(staffIdToAdd);
-		//   localStorage.setItem("favProduct", JSON.stringify(myfav));
-
-		//   location.reload();
-		// }
-		//get the favicon's id which is equal to shoe id
-		var staffIdToDelete = ui.draggable.find(".deleteIcon").attr("id");
-
-		//Get the local storage current items
-		var myFavourites = JSON.parse(localStorage.getItem("favProduct"));
-		if (myFavourites != null) {
-			for (var j = 0; j < myFavourites.length; j++) {
-				if (myFavourites[j] == staffIdToDelete) {
-
-					//delete item from the local storage
-					myFavourites.splice(j, 1);
-					localStorage.setItem("favProduct", JSON.stringify(myFavourites));
-				}
-
-				//reload the page after delete the item to favourite list
-				if (!localStorage.getItem("reload")) {
-					// set reload to true and then reload the page 
-					localStorage.setItem("reload", "true");
-					location.reload();
-				}
-				// after reloading remove "reload" from localStorage 
-				else {
-					localStorage.removeItem("reload");
-				}
-			}
-		}
-	}
-});
-//-----------------------------------------------------------
-
-
-$("#droppable").droppable({
-	drop: function (event, ui) {
-		$(this)
-			.addClass("ui-state-highlight")
-			.find("p")
-			.html("Dropped!");
-	}
 });
 
 $(function () {
@@ -225,23 +98,24 @@ $(function () {
 										</div>
 									</div>
 									<div class="col-md-5 section-md-t3">
-										<div class="agent-info-box">
+										<div class="agent-info-box box">
 											<div class="agent-title">
 												<div class="title-box-d">
-													<h3 class="title-d">
+													<h3 class="title-d property_location_draggerble">
 														${prop.location}
 													</h3>
-													<a href="property-single.html" class="link-a" style="
+													<a href="properties/${prop.id}/property-single-${prop.id}.html" class="link-a" style="
 														color: black; ">Click here to view
 														<span class="bi bi-chevron-right"></span>
 													</a>
 												</div>
 											</div>
-											<div class="agent-content mb-3">
+											<div class="agent-content mb-3 newDiv">
 												<p class="content-d color-text-a">
 													${prop.description}
 												</p>
 											</div>
+											<a href="javascript:void();" class="readmore-btn">Read More</a>
 										</div>
 									</div>
 								</div>
@@ -253,7 +127,183 @@ $(function () {
             `;
 		});
 	});
+
+	//call the function
+	draggableProperty();
 });
+
+$(".property_location_draggerble").draggable({
+
+	// brings the item back to its place when dragging is over
+	revert: true,
+
+	// once the dragging starts, we decrease the opactiy of other items
+	// Appending a class as we do that with CSS
+	drag: function () {
+		$(this).addClass("active");
+	},
+
+	// removing the CSS classes once dragging is over.
+	stop: function () {
+		$(this).removeClass("active");
+	}
+});
+
+// Adding to fav list by Droppable for the hard coded items
+var favListList = [];
+$("#favList").droppable({
+
+	// The class that will be appended to the to-be-dropped-element (favList)
+	activeClass: "active",
+
+	// The class that will be appended once we are hovering the to-be-dropped-element (favList)
+	hoverClass: "hover",
+
+	// The acceptance of the item once it touches the to-be-dropped-element favList
+	tolerance: "touch",
+	
+	drop: function (event, ui) {
+		console.log(event);
+		console.log(ui);
+		favListList.push(ui.draggable.find(".favIcon").attr("id"));
+		buildFavouriteList();
+
+		// var staffIdToAdd = ui.draggable.find(".favIcon").attr("id");
+		// var isAdded = false;
+		// var myfav = JSON.parse(localStorage.getItem("favProduct"));
+		// for (var i = 0; i < myfav.length; i++) {
+		// 	if (myfav[i] == staffIdToAdd) {
+		// 		isAdded = true;
+		// 	}
+		// }
+		// if (isAdded == false) {
+		// 	if (myfav == null) {
+		// 		myfav = [];
+		// 	}
+		// 	myfav.push(staffIdToAdd);
+		// 	localStorage.setItem("favProduct", JSON.stringify(myfav));
+
+		// 	location.reload();
+		// }
+	}
+});
+
+function buildFavouriteList()
+ {
+	$("#favList").innerHTML = '';
+	for (const obj of favListList) {
+		$('#favList').append("<p>" + obj + "</p>");
+	}
+ }
+//------------------------------------------------------
+// Delete from fav list by Draggable the hard coded items
+$("#favList .property_location_draggerble").draggable({
+
+	// brings the item back to its place when dragging is over
+	revert: true,
+
+	// Appending a class as we do that with CSS
+	drag: function () {
+		$(this).addClass("active");
+	},
+
+	// removing the CSS classes once dragging is over.
+	stop: function () {
+		$(this).removeClass("active");
+	}
+	//localStorage.setItem("favProduct", JSON.stringify(myFavourites));
+});
+
+// Adding to fav list by Droppable for the hard coded items
+$(".deleteItemCard").droppable({
+
+	// The class that will be appended to the to-be-dropped-element (favList)
+	//activeClass: "active",
+
+	// The class that will be appended once we are hovering the to-be-dropped-element (favList)
+	//hoverClass: "hover",
+
+	// The acceptance of the item once it touches the to-be-dropped-element favList
+	tolerance: "touch",
+	drop: function (event, ui) {
+		// var staffIdToAdd = ui.draggable.find(".favIcon").attr("id");
+		// var isAdded = false;
+		// var myfav = JSON.parse(localStorage.getItem("favProduct"));
+		// for (var i = 0; i < myfav.length; i++) {
+		//   if (myfav[i] == staffIdToAdd) {
+		//     isAdded = true;
+		//   }
+		// }
+		// if (isAdded == false) {
+		//   if (myfav == null) {
+		//     myfav = [];
+		//   }
+		//   myfav.push(staffIdToAdd);
+		//   localStorage.setItem("favProduct", JSON.stringify(myfav));
+
+		//   location.reload();
+		// }
+		//get the favicon's id which is equal to shoe id
+		var staffIdToDelete = ui.draggable.find(".deleteIcon").attr("id");
+
+		//Get the local storage current items
+		var myFavourites = JSON.parse(localStorage.getItem("favProduct"));
+		if (myFavourites != null) {
+			for (var j = 0; j < myFavourites.length; j++) {
+				if (myFavourites[j] == staffIdToDelete) {
+
+					//delete item from the local storage
+					myFavourites.splice(j, 1);
+					localStorage.setItem("favProduct", JSON.stringify(myFavourites));
+				}
+
+				//reload the page after delete the item to favourite list
+				if (!localStorage.getItem("reload")) {
+					// set reload to true and then reload the page 
+					localStorage.setItem("reload", "true");
+					location.reload();
+				}
+				// after reloading remove "reload" from localStorage 
+				else {
+					localStorage.removeItem("reload");
+				}
+			}
+		}
+	}
+});
+//-----------------------------------------------------------
+
+
+$("#droppable").droppable({
+	drop: function (event, ui) {
+		$(this)
+			.addClass("ui-state-highlight")
+			.find("p")
+			.html("Dropped!");
+	}
+});
+
+
+function draggableProperty() {console.log('blablabla');
+	$(".property_location_draggerble").draggable({
+
+		// brings the item back to its place when dragging is over
+		revert: true,
+	
+		// once the dragging starts, we decrease the opactiy of other items
+		// Appending a class as we do that with CSS
+		drag: function () {
+			$(this).addClass("active");
+		},
+	
+		// removing the CSS classes once dragging is over.
+		stop: function () {
+			$(this).removeClass("active");
+		}
+	});
+
+	console.log('lalalla');
+}
 
 $(function () {
 	$(".addFavourites").on("click", function () {

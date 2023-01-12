@@ -9,14 +9,14 @@ function getLatestPropertiesView(property) {
                     <div class="card-overlay-a-content">
                         <div class="card-header-a">
                             <h2 class="card-title-a">
-                                <a href="property-single.html">${property.location}</a>
+                                <a href="properties/${property.id}/property-single-${property.id}.html">${property.location}</a>
                             </h2>
                         </div>
                         <div class="card-body-a">
                             <div class="price-box d-flex">
                                 <span class="price-a">${property.tenure} | $ ${property.price}</span>
                             </div>
-                            <a href="#" class="link-a">
+                            <a href="properties/${property.id}/property-single-${property.id}.html" class="link-a">
                                 View Property <span class="bi bi-chevron-right"></span>
                             </a>
                         </div>
@@ -67,7 +67,7 @@ function getOuPropertiesView(property) {
             <div class="price-box d-flex">
               <span class="price-a">${property.tenure} | $ ${property.price}</span>
             </div>
-            <a href="property-single.html" class="link-a"
+            <a href="properties/${property.id}/property-single-${property.id}.html" class="link-a"
               >Click here to view
               <span class="bi bi-chevron-right"></span>
             </a>
@@ -102,37 +102,6 @@ function getOuPropertiesView(property) {
     `;
 }
 
-function getOurGalleyView(property) {
-    return `
-        <div class="col-md-4">
-            <div class="card-box-b card-shadow news-box">
-                <div class="img-box-b">
-                    <img src="assets/img/${property.picture}" alt="${property.location}" class="img-b img-fluid" />
-                </div>
-                <div class="card-overlay">
-                    <div class="card-header-b">
-                        <div class="card-category-b">
-                            <a href="blog-single.html" class="category-b">${property.type}</a>
-                        </div>
-                        <div class="card-title-b">
-                            <h2 class="title-2">
-                                 <a href="#">${property.location}</a>
-                                <br />
-                                <a href="#" class="link-a">
-                                    View Property <span class="bi bi-chevron-right"></span>
-                                </a>
-                            </h2>
-                        </div>
-                        <div class="card-date">
-                            <span class="date-b">${property.added.day} ${property.added.month} ${property.added.year}</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    `;
-}
-
 function getFavouritesView(property) {
     return `
         <div class="col-md-4">
@@ -147,9 +116,6 @@ function getFavouritesView(property) {
                                 <a href="#"  class="link-two">${property.location}</a>
                             </h3>
                         </div>
-                    </div>
-                    <div class="card-body-d">
-                        <p class="content-d color-text-a">${property.description}</p>
                     </div>
                     <div class="card-footer-d">
                         <div class="socials-footer d-flex justify-content-center">

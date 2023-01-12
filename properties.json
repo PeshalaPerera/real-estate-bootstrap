@@ -54,24 +54,6 @@
         }
     },
     {
-        "id": "prop4",
-        "type": "House",
-        "bedrooms": 3,
-        "area": 1700,
-        "baths": 1,
-        "price": 100,
-        "tenure": "Rent",
-        "description": "Come see this charming home now on the market! This home has fresh interior paint and partial flooring replacement. Discover a bright and open interior with plenty of natural light and a neutral color palette, complimented by a fireplace. You'll love cooking in this kitchen, complete with a spacious center island and a sleek backsplash. You won’t want to leave the serene primary suite, the perfect space to relax. Extra bedrooms add nice flex space for your everyday needs. The primary bathroom is fully equipped with a separate tub and shower, double sinks, and plenty of under sink storage. Kick back next to your very own private pool in the back yard. Like what you hear? Come see it for yourself!",
-        "location": "Prince Regent Street, Newham, E16",
-        "picture": "properties/prop4.jpg",
-        "url": "properties/Property4.html",
-        "added": {
-            "month": "April",
-            "day": 19,
-            "year": 2020
-        }
-    },
-    {
         "id": "prop5",
         "type": "Apartment",
         "bedrooms": 3,
