@@ -43,33 +43,6 @@ function getLatestPropertiesView(property) {
     `;
 }
 
-function getGalleryView(property) {
-    return `
-        <div class="carousel-item-c swiper-slide">
-            <div class="card-box-b card-shadow news-box">
-                <div class="img-box-b">
-                    <img src="assets/img/${property.picture}" alt="${property.location}" class="img-b img-fluid"/>
-                </div>
-                <div class="card-overlay">
-                    <div class="card-header-b">
-                        <div class="card-category-b">
-                            <a href="#" class="category-b">${property.type}</a>
-                        </div>
-                        <div class="card-title-b">
-                            <h2 class="title-2">
-                                <a href="blog-single.html">${property.location}</a>
-                            </h2>
-                        </div>
-                        <div class="card-date">
-                            <span class="date-b">${property.added.day} ${property.added.month} ${property.added.year}</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>    
-    `;
-}
-
 function getOuPropertiesView(property) {
     return `
     <div class="col-md-4">
@@ -202,27 +175,11 @@ function setLatestPropertiesView(properties) {
     });
 }
 
-function setGalleryView(properties) {
-    const output_container = document.querySelector('#gallery-output');
-
-    properties.forEach(property => {
-        output_container.innerHTML += getGalleryView(property);
-    });
-}
-
 function setOuPropertiesView(properties) {
     const output_container = document.querySelector('#our-properties-output');
 
     properties.forEach(property => {
         output_container.innerHTML += getOuPropertiesView(property);
-    });
-}
-
-function setOurGalleyView(properties) {
-    const output_container = document.querySelector('#our-gallery');
-
-    properties.forEach(property => {
-        output_container.innerHTML += getOurGalleyView(property);
     });
 }
 
@@ -246,19 +203,10 @@ function assignProperties(propertyType, properties) {
     switch (propertyType) {
         case 'index': {
             setLatestPropertiesView(properties);
-            setGalleryView(properties);
             break;
         }
-        // case 'find': {
-        //     setGalleryView(properties);
-        //     break;
-        // }
         case 'property-grid': {
             setOuPropertiesView(properties);
-            break;
-        }
-        case 'gallery': {
-            setOurGalleyView(properties);
             break;
         }
         case 'favourites': {
